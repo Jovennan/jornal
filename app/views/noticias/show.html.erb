@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @noticia.autor %>
+</p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @noticia.titulo %>
+</p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @noticia.conteudo %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= image_tag(@noticia.imagem_url, :width => 600) if @noticia.imagem.present? %>
+</p>
+
+<h3>Novo Comentário</h3>
+<%= render 'comentarios/form' %>
+
+<h3>Comentários</h3>
+<% @noticia.comentarios.each do |comentario| %>
+  <div>
+    <strong><%= comentario.autor %></strong>
+    <br />
+    <p><%= comentario.conteudo %><p>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_noticia_path(@noticia) %> |
+<%= link_to 'Back', noticias_path %>

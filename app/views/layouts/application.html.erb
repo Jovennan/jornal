@@ -9,6 +9,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Início</a></li>
+        <li><a href="/noticias">Notícias</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    <div class="container">
+  <%= yield %>
+</div>
+<footer>
+  <div class="container">
+    UNIPE 2017
+  </div>
+</footer>
   </body>
 </html>
